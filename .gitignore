@@ -1,0 +1,6 @@
+__pycache__/
+*.ipynb
+*.zip
+*log.txt
+
+

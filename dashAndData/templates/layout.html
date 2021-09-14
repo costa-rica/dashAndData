@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+        
+        <!-- Import the Bootstrap stylesheet -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+
+    <title>{% block title %}{% endblock %}</title>
+</head>
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+  {% for category, message in messages %}
+    <div class="alert alert-{{ category }}">
+      {{ message }}
+    </div>
+  {% endfor %}
+{% endif %}
+{% endwith %}
+<body class="bg-pecondary body_margin">
+    <div class="navbar">
+        <div class="container">
+            <a href="#">D<spand>and</spand>D</a>
+
+            <img id="mobile-cta" class="mobile-menu" src="{{ url_for('static', filename='images/menu.svg') }}" alt="Open Navigation">
+
+            <nav>
+                <img id="mobile-exit" class="mobile-menu-exit" src="{{ url_for('static', filename='images/exit.svg') }}" alt="Close Navigation">
+                <ul class="primary-nav">
+                    <li class="current"><a href="#">Home</a></li>
+                    <li><a href="#">Data Tools</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+                <ul class="secondary-nav">
+                    
+                    <li><a href="#">Search</a></li>
+                    <li><a href="#">Textbox</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    {% block main %}{% endblock %}
+</body>
+</html>
