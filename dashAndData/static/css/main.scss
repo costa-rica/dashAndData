@@ -1,7 +1,90 @@
-@import url('https://fonts.googleapis.com/css2?family=Allison&display=swap');
 
 .body_margin {
-    padding: 0;
+    padding: 0;/*padding works on inside*/
+    margin: 0;/*margin works on outside*/
+
+}
+
+
+.logo {
+    text-decoration: none;
+    font-weight: bold;
+    /*font-style:oblique;*/
+    
+}
+
+section {
+    padding: 5em 2em;
+}
+
+.hero {
+    text-align: center;
+}
+
+.hero-img {
+    width: 70%;
+    margin-top: 3em;
+}
+
+.feature-section {
+    color: black;
+}
+
+.ul-features-list{
     margin: 0;
-    font-family: "Allison";
+    padding-left: .1em;
+    li {
+        font-size: 1.1em;
+        margin:0;
+        padding-left:.1em;
+        //display:grid;
+        margin-bottom: 1em;
+        margin-left: 2em;
+        position: relative;
+    
+        &:before { //&specific to scss
+            content: '';
+            left: -1.3em;
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-image: url('../images/bullet.svg');
+            background-size: contain;
+            margin-right: 5em;
+        }
+
+    }
+}
+
+.feature-section img {
+    margin-left: 15%;
+    margin-top:0;
+}
+
+.testimonials-section {
+    text-align: center;
+    li {
+        list-style-type: none;
+        margin: 1em 0 1em 0;
+        img {
+            width: 5em;
+            height: 5em;
+            border-radius: 50%;
+
+        }
+
+    }
+}
+
+.contact-section label {
+    display: block;
+}
+
+.contact-section input,textarea {
+    width: 100%;
+    padding: .8em;
+    margin-bottom: 1em;
+    border-radius: .3em;
+    border: 3px solid gray;
+    box-sizing: border-box;//prevents horizontal scroll bars when width 100%
 }

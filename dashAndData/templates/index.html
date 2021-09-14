@@ -7,16 +7,19 @@
             <p class="subhead">It's simple. Not easy.</p>
             <h1>Dashboards and Databases</h1>
             <div class="hero-cta">
-                <a href="#" class="primary-cta">See For Yourself</a>
+
+                <p class="subhead">
+                    Solutions for economists, statisticians and data analysts. Work with an economist that has the dashboard and database application skill set to create your own customized solution.
+                </p>
             </div>
         </div>
         <img class="hero-img" src="{{ url_for('static', filename='images/shiftgarten.png') }}" alt="Shiftgarten Login">
     </div>
 </section>
 
-<section class="feature-section">
+<section class="feature-section bg-secondary">
     <div class="container">
-        <ul>
+        <ul class="ul-features-list">
             
             <li>Web interface to view/enter/send data</li>
             <li>Secured with login/passwords</li>
@@ -25,24 +28,25 @@
             <li>Everything customized</li>
 
         </ul>
+
         <img class="hero-img" src="{{ url_for('static', filename='images/shiftgarten_dashboard.png') }}" alt="Shiftgarten Dashboard">
     </div>
 </section>
 <section class="testimonials-section">
     <div class="container">
         <ul>
-            <li>
-                <img src="images/person.jpg" alt="Emily">
+            <li >
+                <img src="{{ url_for('static', filename='images/person.jpg') }}" alt="Emily">
                 <blockquote>"Nick did an excellent job!"</blockquote>
                 <cite>- Emily</cite>
             </li>
-            <li>
-                <img src="images/person.jpg" alt="Mark">
+            <li >
+                <img src="{{ url_for('static', filename='images/person.jpg') }}"  alt="Mark">
                 <blockquote>"Couldn't have done it without him!"</blockquote>
                 <cite>- Mark</cite>
             </li>
-            <li>
-                <img src="images/person.jpg" alt="Shayan">
+            <li >
+                <img src="{{ url_for('static', filename='images/person.jpg') }}"  alt="Shayan">
                 <blockquote>"Nick is hte smarteset man in the universe"</blockquote>
                 <cite>- Shayan</cite>
             </li>
@@ -50,6 +54,9 @@
         </ul>
     </div>
 </section>
+
+<hr>
+
 <section class="contact-section">
     <div class="container">
         <div class="contact-left">
@@ -61,7 +68,7 @@
                 <input type="email" id="email" name="email">
                 <label for="message">Message</label>
                 <textarea name="message" id="message" cols="30" rows="10"></textarea>
-
+<br/>
                 <input type="submit" class="send-message-cta" value="send_message">
 
 
