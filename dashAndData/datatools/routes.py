@@ -12,11 +12,10 @@ from flask import render_template, url_for, redirect, flash, request, abort, ses
 # import openpyxl
 # import json
 
-data_tools = Blueprint('data_tools', __name__)
 
 
-# @data_tools.route("/")
-# @data_tools.route("/home")
-# def home():
+datatools = Blueprint('datatools', __name__)
 
-    # return render_template('home.html')
+@datatools.route("/dataTools")
+def dataTools():
+    return render_template('dataTools.html')

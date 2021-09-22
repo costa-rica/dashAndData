@@ -38,11 +38,11 @@ def create_app(config_class=Config):
 
 
     from dashAndData.blog.routes import blog
-    from dashAndData.data_tools.routes import data_tools
+    from dashAndData.datatools.routes import datatools
     from dashAndData.main.routes import main
     # from dashAndData.errors.handlers import errors
     app.register_blueprint(blog)
-    app.register_blueprint(data_tools)
+    app.register_blueprint(datatools)
     app.register_blueprint(main)
     # app.register_blueprint(errors)
 

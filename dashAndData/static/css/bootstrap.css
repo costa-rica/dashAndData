@@ -4270,7 +4270,7 @@ fieldset:disabled .btn {
 }
 
 .navbar {
-  position: relative;
+  /*position: relative;*//*end nick removed*/
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
@@ -4312,6 +4312,7 @@ fieldset:disabled .btn {
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
+  
 }
 
 .navbar-nav .nav-link {
@@ -7395,6 +7396,8 @@ fieldset:disabled .btn {
 .position-fixed {
   position: fixed !important;
 }
+
+
 
 .position-sticky {
   position: -webkit-sticky !important;
@@ -11745,4 +11748,13 @@ legend {
 
 .list-group-item-action:hover {
   background-color: #23272b;
+}
+
+/*nick*/
+
+.alert_nick{
+  position: fixed !important;
+  width:100%;
+  z-index: 999;/*layerin position, higher number=top*/
+  margin-top:58px;
 }

@@ -14,14 +14,16 @@ else:
 
 
 class Config:
-    SECRET_KEY = config.get('SECRET_KEY_DMR')
-    SQLALCHEMY_DATABASE_URI = config.get('SQL_URI_DASHANDDATA')
-    MAIL_SERVER = 'smtp.googlemail.com'
-    MAIL_PORT = 587
-    MAIL_USE_TLS = True
-    MAIL_PASSWORD = config.get('MAIL_PASSWORD_DAD')
-    MAIL_USERNAME = config.get('MAIL_USERNAME_DAD')
     DEBUG = True
+    MAIL_USE_TLS = True
+    SECRET_KEY = config.get('SECRET_KEY_DAD')
+    SQLALCHEMY_DATABASE_URI = config.get('SQL_URI_DAD')
+    # MAIL_SERVER = config.get('MAIL_SERVER_GOOGLE')
+    # MAIL_PORT = config.get('MAIL_SERVER_GOOGLE')
+    MAIL_PASSWORD_TGE = config.get('MAIL_PASSWORD_TGE')
+    MAIL_USERNAME_TGE = config.get('MAIL_USERNAME_TGE')
+    MAIL_SERVER_GD = config.get('MAIL_SERVER_GD')
+    MAIL_PORT_GD = config.get('MAIL_PORT_GD')
     # UPLOADED_FILES_FOLDER = os.path.join(os.path.dirname(__file__), 'static/files')
     # UTILITY_FILES_FOLDER = os.path.join(os.path.dirname(__file__), 'static/files_utility')
     # QUERIES_FOLDER = os.path.join(os.path.dirname(__file__), 'static/queries')

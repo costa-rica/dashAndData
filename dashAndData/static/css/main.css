@@ -19,6 +19,10 @@ section {
   text-align: center;
 }
 
+.hero h1 {
+  font-weight: bold;
+}
+
 .hero-img {
   width: 70%;
   margin-top: 3em;
@@ -28,21 +32,26 @@ section {
   color: black;
 }
 
-.ul-features-list {
+ul.features-list {
   margin: 0;
   padding-left: .1em;
+  padding-bottom: 2em;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(19rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
 }
 
-.ul-features-list li {
+ul.features-list li {
   font-size: 1.1em;
   margin: 0;
   padding-left: .1em;
-  margin-bottom: 1em;
+  margin-bottom: .75em;
   margin-left: 2em;
   position: relative;
 }
 
-.ul-features-list li:before {
+ul.features-list li:before {
   content: '';
   left: -1.3em;
   position: absolute;
@@ -58,19 +67,98 @@ section {
   margin-top: 0;
 }
 
+/*
 .testimonials-section {
-  text-align: center;
-}
+    li {
+        list-style-type: none;
+        text-align: center;
+        padding: 2em 1em;
+        width: 80%;
+        margin: 0 auto 5em auto;
+        
+        img {
+            width: 5em;
+            height: 5em;
+            border-radius: 50%;
+        }
 
-.testimonials-section li {
+    }
+}
+*/
+.testimonials-section li:nth-child(odd) {
+  margin: 0 1em;
+  width: 100%;
   list-style-type: none;
-  margin: 1em 0 1em 0;
 }
 
-.testimonials-section li img {
+.testimonials-section li:nth-child(odd) .testimonial_list_item {
+  margin: 3em;
+  border-radius: 2em;
+  padding: 2em;
+}
+
+.testimonials-section li:nth-child(odd) .testimonial_list_item blockquote {
+  width: 80%;
+  margin-left: 10%;
+  color: black;
+}
+
+.testimonials-section li:nth-child(odd) .citation_image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 5%;
+  float: right;
+}
+
+.testimonials-section li:nth-child(odd) .citation_image img {
   width: 5em;
-  height: 5em;
   border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.testimonials-section li:nth-child(odd) .citation_image .citation_text {
+  padding-left: 1.5em;
+  margin-top: 2em;
+}
+
+.testimonials-section li:nth-child(even) {
+  margin: 8em 1em;
+  width: 100%;
+  list-style-type: none;
+}
+
+.testimonials-section li:nth-child(even) .testimonial_list_item {
+  margin: 3em;
+  border-radius: 2em;
+  padding: 2em;
+}
+
+.testimonials-section li:nth-child(even) .testimonial_list_item blockquote {
+  width: 80%;
+  margin-left: 10%;
+  color: black;
+}
+
+.testimonials-section li:nth-child(even) .citation_image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 5%;
+  float: left;
+}
+
+.testimonials-section li:nth-child(even) .citation_image img {
+  width: 5em;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.testimonials-section li:nth-child(even) .citation_image .citation_text {
+  padding-left: 1.5em;
+  margin-top: 2em;
 }
 
 .contact-section label {
@@ -85,5 +173,201 @@ section {
   border: 3px solid gray;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+input[type="submit"] {
+  font-weight: bold;
+  font-size: 1.3em;
+  padding: .8em 2em;
+}
+
+iframe {
+  width: 100%;
+  height: 300px;
+}
+
+.navbar_supplement {
+  position: fixed;
+  z-index: 998;
+  /*layerin position, higher number=top*/
+  width: 100%;
+}
+
+.hideNav {
+  display: none;
+}
+
+.nav_align_right {
+  float: right;
+}
+
+@media only screen and (min-width: 1080px) {
+  .container {
+    width: 1080px;
+    margin: 0 auto;
+  }
+  section {
+    padding: 10em 4em;
+  }
+  .hero .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    text-align: left;
+  }
+  .hero .container .left-col {
+    margin: 3em 3em 0 5em;
+  }
+  .hero .container h1 {
+    font-size: 3em;
+  }
+  ul.features-list {
+    display: block;
+    margin-right: 5em;
+    float: right;
+    margin-top: -5em;
+    padding-bottom: 2em;
+  }
+  ul.features-list li {
+    font-size: 1.4em;
+  }
+  ul.features-list li:before {
+    width: 30px;
+    height: 30px;
+  }
+  .feature-section {
+    position: relative;
+    height: 400px;
+  }
+  .feature-section img {
+    display: block;
+    position: absolute;
+    left: -2%;
+    width: 30%;
+    bottom: -2em;
+  }
+  .nav_align_right {
+    float: right;
+  }
+}
+
+/*Data Tools*/
+section.data_tools_main {
+  /*
+    .logo_div_km{
+        position: absolute;
+        right: 0;
+        background-color: var(--bs-gray-400);
+        margin-right: 30px;
+        padding: .8em .8em .8em .8em;
+        border-radius: 50%;
+    }
+    .logo_div_km >img {width:180px;
+        float: right;
+        margin: 0 0 20px 0;
+    }
+
+*/
+}
+
+section.data_tools_main h1 {
+  margin-bottom: 1em;
+}
+
+section.data_tools_main ul {
+  list-style-type: none;
+}
+
+section.data_tools_main ul a {
+  text-decoration: none;
+}
+
+section.data_tools_main li:nth-child(odd) {
+  background-color: var(--bs-secondary);
+  margin: 0 0 3em 3em;
+  border-radius: 2em;
+  padding: 2em;
+  width: 100%;
+}
+
+section.data_tools_main li:nth-child(odd) a {
+  text-decoration: none;
+  color: black;
+  width: 100%;
+}
+
+section.data_tools_main li:nth-child(odd) a:hover {
+  color: var(--bs-dark);
+}
+
+section.data_tools_main li:nth-child(even) {
+  background-color: var(--bs-primary);
+  margin: 0 0 3em 3em;
+  border-radius: 2em;
+  padding: 2em;
+  width: 100%;
+}
+
+section.data_tools_main li:hover {
+  background-color: var(--bs-gray-500);
+  color: var(--bs-dark);
+}
+
+section.data_tools_main li:hover a {
+  color: var(--bs-dark);
+}
+
+section.data_tools_main .data_tool_title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+section.data_tools_main .title_div {
+  width: 90%;
+}
+
+section.data_tools_main .data_tools_description {
+  width: 80%;
+}
+
+section.data_tools_main .logo_div {
+  position: absolute;
+  right: 0;
+  padding: .8em .8em .8em .8em;
+}
+
+section.data_tools_main #logo_div_km {
+  background-color: var(--bs-gray-400);
+  margin-right: 30px;
+  border-radius: 50%;
+}
+
+section.data_tools_main #logo_div_km img {
+  width: 180px;
+  margin: 0 0 20px 0;
+}
+
+section.data_tools_main #logo_div_cbc {
+  right: 2em;
+  top: -2em;
+}
+
+section.data_tools_main #logo_div_cbc img {
+  border-radius: 50%;
+}
+
+section.data_tools_main #logo_div_wsh {
+  right: 2em;
+  top: -2em;
+}
+
+section.data_tools_main #logo_div_wsh img {
+  border-radius: 50%;
+  width: 130px;
 }
 /*# sourceMappingURL=main.css.map */
