@@ -343,12 +343,11 @@ section.data_tools_main .logo_div {
 
 section.data_tools_main #logo_div_km {
   background-color: var(--bs-gray-400);
-  margin-right: 30px;
   border-radius: 50%;
 }
 
 section.data_tools_main #logo_div_km img {
-  width: 180px;
+  width: 120px;
   margin: 0 0 20px 0;
 }
 
@@ -369,5 +368,17 @@ section.data_tools_main #logo_div_wsh {
 section.data_tools_main #logo_div_wsh img {
   border-radius: 50%;
   width: 130px;
+}
+
+@media only screen and (max-width: 1010px) {
+  #logo_div_km {
+    display: none;
+  }
+  #logo_div_cbc {
+    display: none;
+  }
+  #logo_div_wsh {
+    display: none;
+  }
 }
 /*# sourceMappingURL=main.css.map */

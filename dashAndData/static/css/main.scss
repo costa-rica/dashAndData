@@ -1,10 +1,7 @@
-
 .body_margin {
     padding: 0;/*padding works on inside*/
     margin: 0;/*margin works on outside*/
-
 }
-
 
 .logo {
     text-decoration: none;
@@ -58,7 +55,6 @@ ul.features-list{
             background-size: contain;
             margin-right: 5em;
         }
-
     }
 }
 
@@ -108,7 +104,6 @@ ul.features-list{
             margin-left: 5%;
             float: right;
             img {
-            
                 width: 5em;
                 border-radius: 50%;
                 object-fit: cover;
@@ -151,9 +146,6 @@ ul.features-list{
             }
         }
     }
-
-
-
     
 }
 
@@ -269,10 +261,7 @@ section.data_tools_main {
             text-decoration:none;
             color: black;
             width:100%;}
-        a:hover{
-            color: var(--bs-dark);
-        }
-
+        a:hover{color: var(--bs-dark);}
     }
 
     li:nth-child(even) {
@@ -281,14 +270,11 @@ section.data_tools_main {
         border-radius: 2em;
         padding: 2em;
         width: 100%;
-        
     }
     li:hover{
         background-color: var(--bs-gray-500);
         color: var(--bs-dark);
-        a {
-            color: var(--bs-dark);
-        }
+        a {color: var(--bs-dark);}
     }
 
     .data_tool_title{
@@ -304,9 +290,9 @@ section.data_tools_main {
     }
     #logo_div_km{
         background-color: var(--bs-gray-400);
-        margin-right: 30px;
+        
         border-radius: 50%;
-        img {width:180px;margin: 0 0 20px 0;}
+        img {width:120px;margin: 0 0 20px 0;}
         
     }
     #logo_div_cbc{
@@ -340,4 +326,11 @@ section.data_tools_main {
     }
 
 */
+}
+@media only screen and (max-width: 1010px) {
+    #logo_div_km{
+        display: none;
+    }
+    #logo_div_cbc{display: none;}
+    #logo_div_wsh{display:none;}
 }
