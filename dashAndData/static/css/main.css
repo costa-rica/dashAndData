@@ -398,11 +398,7 @@ section.data_tools_main #logo_div_wsh img {
   width: 75%;
   margin-left: 2%;
   padding-bottom: 3em;
-}
-
-.exactCheck {
-  margin-left: 15%;
-  float: left;
+  color: var(--bs-dark);
 }
 
 .exactCheck label {
@@ -423,12 +419,24 @@ section.data_tools_main #logo_div_wsh img {
   float: right;
 }
 
-.criteriaLabel {
-  float: right;
+.searchCriteriaRows {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-.greyButton button {
-  background-color: #c8c8c8;
-  float: right;
+.criteriaLabel {
+  padding: 0 0 0 5px;
+  min-width: 220px;
+}
+
+.text_color {
+  color: var(--bs-dark);
+}
+
+@media only screen and (max-width: 1010px) {
+  .searchCriteriaRows {
+    display: inline;
+  }
 }
 /*# sourceMappingURL=main.css.map */

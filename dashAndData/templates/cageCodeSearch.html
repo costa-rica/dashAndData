@@ -44,27 +44,27 @@ The data from this site comes from the
 	{% if searchStringDict %}
 	
 		{% for key, searchCriteria in searchDictClean.items() %}
-		<div class="row">
-		<span class="col-4"><span class="criteriaLabel">{{ searchCriteria }}: </span></span>
-		<span class="col-3"><input type="text" name="{{ key }}" value= {{ searchStringDict[searchCriteria] }}></span>
-		<span class=" col-3">
-			<span class="exactCheck"><input class="form-check-input" type="checkbox" name={{ key + "Exact"}}  value="checked">
-			<label class="form-check-label" for={{ key + "Exact"}}>Exact match</label></span>
-		</span>
+		<div class="searchCriteriaRows">
+
+
+
+			<span class="criteriaLabel">{{ searchCriteria }}: </span>
+			<input type="text" name={{ key }} value= {{ searchStringDict[searchCriteria] }}>
+			<label class="form-check-label" for={{ key + "Exact"}}>
+				<input class="form-check-input" type="checkbox" name={{ key + "Exact"}}  value="checked"> Exact match
+			</label>		
 		
 		</div>
 		{% endfor %}
 	
 	{% else %}
 		{% for key, searchCriteria in searchDictClean.items() %}
-		<div class="row">
-		<span class="col-4"><span class="criteriaLabel">{{ searchCriteria }}: </span></span>
-		<span class="col-3"><input type="text" name={{ key }}></span>
-		<span class=" col-3">
-			<span class="exactCheck"><input class="form-check-input" type="checkbox" name={{ key + "Exact"}}  value="checked">
-			<label class="form-check-label" for={{ key + "Exact"}}>Exact match</label></span>
-		</span>
-		
+		<div class="searchCriteriaRows ">
+			<span class="criteriaLabel">{{ searchCriteria }}: </span>
+			<input type="text" name={{ key }}>
+			<label class="form-check-label" for={{ key + "Exact"}}>
+				<input class="form-check-input" type="checkbox" name={{ key + "Exact"}}  value="checked"> Exact match
+			</label>		
 		</div>
 		{% endfor %}
 	{% endif %}
@@ -75,7 +75,7 @@ The data from this site comes from the
 	{% if searchStringDict %}
     <button type="submit" name="searchCage" value="download" class="btn btn-primary"> Download Excel</button>
 	<span class="clearButton">
-	<button type="submit" class="btn greyButton" name="clearButton" value="clear">Clear</button>
+	<button type="submit" class="btn btn-secondary" name="clearButton" value="clear">Clear</button>
 	</span>
 	{% endif %}
 	<span class="col-2">      </span>
@@ -102,8 +102,9 @@ The data from this site comes from the
  {% endif %}
 </form>
 <!--copied this from security.html to build table, probably needs somehig above in headers-->
-	<div class="mt-4">
-	<table id="proxies" class="display table nowrap responsive" style="width: 100%">
+	<div class="mt-4 ">
+
+	<table id="proxies" class="display table nowrap responsive text_color" style="width: 100%">
 		<thead>
 			<tr>
 				{% for header in columnNames %}
@@ -115,7 +116,7 @@ The data from this site comes from the
 		{% for row in dfResults %}
 			<tr>
 				{% for index in range(0, len(columnNames)) %}
-					<td>{{row[columnNames[index]]}}</td>
+					<td><span class="text_color">{{row[columnNames[index]]}}</span></td>
 				{% endfor %}
 			</tr>
 		{% endfor %}

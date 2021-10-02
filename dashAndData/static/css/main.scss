@@ -343,14 +343,30 @@ section.data_tools_main {
     border-width:.2em;border-style:solid;
     border-color:black;
     width:75%; margin-left: 2%;
-    padding-bottom:3em;}
-.exactCheck{margin-left: 15%;float: left;}
+    padding-bottom:3em; color: var(--bs-dark)}
+//.exactCheck{margin-left: 15%;}
 .exactCheck label {text-align: center;}
 /*.cageBox row {padding:0px; padding-bottom:0px;line-height:.2em;}
 */
 .cageRow {padding:0px; padding-bottom:0px;
 line-height:.2em; height: .5em; vertical-align: bottom;}
 .cageButton{float: right;}
-.criteriaLabel{float: right;}
-.greyButton button{background-color:rgb(200, 200, 200);
-float: right;}
+//.criteriaLabel{float: right;}
+
+
+.searchCriteriaRows{
+    display: flex;
+}
+.criteriaLabel{
+    padding: 0 0 0 5px;
+    min-width: 220px;
+}
+.text_color{
+    color:var(--bs-dark);
+}
+
+@media only screen and (max-width: 1010px) {
+    .searchCriteriaRows{
+        display: inline;
+    }
+}
