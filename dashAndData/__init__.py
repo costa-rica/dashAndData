@@ -36,14 +36,18 @@ def create_app(config_class=Config):
     # login_manager.init_app(app)
     # mail.init_app(app)
 
-
+    
     from dashAndData.blog.routes import blog
     from dashAndData.datatools.routes import datatools
     from dashAndData.main.routes import main
     # from dashAndData.errors.handlers import errors
+    from dashAndData.datatools.cage_search.routes import datatools_cage
+    
+    
     app.register_blueprint(blog)
     app.register_blueprint(datatools)
     app.register_blueprint(main)
     # app.register_blueprint(errors)
+    app.register_blueprint(datatools_cage)
 
     return app

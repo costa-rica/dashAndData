@@ -5,7 +5,11 @@ if os.environ.get('COMPUTERNAME')=='CAPTAIN2020':
     with open(r'D:\OneDrive\Documents\professional\config_files\config_dashAndData.json') as config_file:
         config = json.load(config_file)
 elif os.environ.get('USER')=='sanjose':
+    print('computer name is sanjose???')
     with open('/home/sanjose/Documents/environments/config.json') as config_file:
+        config = json.load(config_file)
+elif os.environ.get('COMPUTERNAME')=='NICKSURFACEPRO4':
+    with open(r"C:\Users\Costa Rica\OneDrive\Documents\professional\config_files\config_dashAndData.json") as config_file:
         config = json.load(config_file)
 else:
     with open('/home/ubuntu/environments/config.json') as config_file:
@@ -28,4 +32,5 @@ class Config:
     # UTILITY_FILES_FOLDER = os.path.join(os.path.dirname(__file__), 'static/files_utility')
     # QUERIES_FOLDER = os.path.join(os.path.dirname(__file__), 'static/queries')
     # FILES_DATABASE = os.path.join(os.path.dirname(__file__), 'static/files_database')
-    
+    SQLALCHEMY_BINDS ={'dbCage':config.get('SQLALCHEMY_BINDS_DBCAGE'),
+        'dbSite' :config.get('SQLALCHEMY_BINDS_DBSITE')}

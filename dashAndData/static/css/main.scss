@@ -334,3 +334,23 @@ section.data_tools_main {
     #logo_div_cbc{display: none;}
     #logo_div_wsh{display:none;}
 }
+
+// Cage Code Search
+
+.spacePageBorder{padding-left:5em;padding-right:5em;
+	padding-top:5em;padding-bottom:5em;}
+.cageBox {border-radius: .75em; background-color:rgb(210,180,140);
+    border-width:.2em;border-style:solid;
+    border-color:black;
+    width:75%; margin-left: 2%;
+    padding-bottom:3em;}
+.exactCheck{margin-left: 15%;float: left;}
+.exactCheck label {text-align: center;}
+/*.cageBox row {padding:0px; padding-bottom:0px;line-height:.2em;}
+*/
+.cageRow {padding:0px; padding-bottom:0px;
+line-height:.2em; height: .5em; vertical-align: bottom;}
+.cageButton{float: right;}
+.criteriaLabel{float: right;}
+.greyButton button{background-color:rgb(200, 200, 200);
+float: right;}

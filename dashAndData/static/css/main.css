@@ -381,4 +381,54 @@ section.data_tools_main #logo_div_wsh img {
     display: none;
   }
 }
+
+.spacePageBorder {
+  padding-left: 5em;
+  padding-right: 5em;
+  padding-top: 5em;
+  padding-bottom: 5em;
+}
+
+.cageBox {
+  border-radius: .75em;
+  background-color: tan;
+  border-width: .2em;
+  border-style: solid;
+  border-color: black;
+  width: 75%;
+  margin-left: 2%;
+  padding-bottom: 3em;
+}
+
+.exactCheck {
+  margin-left: 15%;
+  float: left;
+}
+
+.exactCheck label {
+  text-align: center;
+}
+
+/*.cageBox row {padding:0px; padding-bottom:0px;line-height:.2em;}
+*/
+.cageRow {
+  padding: 0px;
+  padding-bottom: 0px;
+  line-height: .2em;
+  height: .5em;
+  vertical-align: bottom;
+}
+
+.cageButton {
+  float: right;
+}
+
+.criteriaLabel {
+  float: right;
+}
+
+.greyButton button {
+  background-color: #c8c8c8;
+  float: right;
+}
 /*# sourceMappingURL=main.css.map */
