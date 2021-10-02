@@ -4,7 +4,7 @@ from flask import render_template, url_for, redirect, flash, request, abort, ses
     Response, current_app, send_from_directory
 # from dashAndData import db
 # from dashAndData.models import Datatools
-# import os
+import os
 # from datetime import datetime, date, time
 # from sqlalchemy import func
 # import pandas as pd
@@ -13,14 +13,11 @@ from flask import render_template, url_for, redirect, flash, request, abort, ses
 # import json
 
 from dashAndData.datatools.cage_search.utils import makeSearchExactDict, \
-    searchQueryCageToDf
+    searchQueryCageToDf, cageExcelObjUtil
 
 
 datatools_cage = Blueprint('datatools_cage', __name__,url_prefix='/datatools_cage')
 
-# @datatools.route("/dataTools")
-# def dataTools():
-    # return render_template('dataTools.html')
     
 @datatools_cage.route('/cageCodeSearch',methods=['POST','GET'])
 def cageCodeSearch():
@@ -33,7 +30,7 @@ def cageCodeSearch():
     if request.method=="POST":
         formDict = request.form.to_dict()
         if formDict.get('clearButton'):
-            return redirect(url_for('datatools.cageCodeSearch'))
+            return redirect(url_for('datatools_cage.cageCodeSearch'))
 
         searchStringDict,exactDict = makeSearchExactDict(formDict)
         #re-Key searchStringDict for webpage
