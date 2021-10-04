@@ -397,8 +397,15 @@ section.data_tools_main #logo_div_wsh img {
   border-color: black;
   width: 75%;
   margin-left: 2%;
-  padding-bottom: 3em;
+  padding-bottom: 15em;
   color: var(--bs-dark);
+  block-size: -webkit-fit-content;
+  block-size: -moz-fit-content;
+  block-size: fit-content;
+  padding-top: .5em;
+  padding-left: 1em;
+  padding-bottom: 4em;
+  padding-right: 1em;
 }
 
 .exactCheck label {
@@ -406,15 +413,10 @@ section.data_tools_main #logo_div_wsh img {
 }
 
 /*.cageBox row {padding:0px; padding-bottom:0px;line-height:.2em;}
-*/
-.cageRow {
-  padding: 0px;
-  padding-bottom: 0px;
-  line-height: .2em;
-  height: .5em;
-  vertical-align: bottom;
-}
 
+.cageRow {padding:0px; padding-bottom:0px;
+line-height:.2em; height: .5em; vertical-align: bottom;}
+*/
 .cageButton {
   float: right;
 }
@@ -438,5 +440,59 @@ section.data_tools_main #logo_div_wsh img {
   .searchCriteriaRows {
     display: inline;
   }
+}
+
+/*getSts*/
+.getSts p {
+  margin-left: 1%;
+}
+
+.getStsBox {
+  border-radius: .75em;
+  background-color: tan;
+  border-width: .2em;
+  border-style: solid;
+  border-color: black;
+  width: 75%;
+  margin-left: 2%;
+  color: var(--bs-dark);
+}
+
+.getSts button {
+  margin-left: 2%;
+}
+
+.getStsBox textarea {
+  width: 80%;
+}
+
+.fileUploadInput {
+  background-color: #f0f0f0;
+  border-radius: .25em;
+  width: 78%;
+}
+
+.lightPadding {
+  padding-top: .5em;
+  padding-left: 1em;
+  padding-bottom: .5em;
+  padding-right: 1em;
+}
+
+.table_background {
+  background-color: var(--bs-gray-400);
+  padding: 20px,20px,20px,20px;
+  margin: 20px,20px,20px,20px;
+  border-radius: .5em;
+}
+
+.table_background_sub {
+  margin-top: 1em;
+  padding-right: 1em;
+  padding-left: 1em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  background-color: var(--bs-gray-400);
+  border-radius: .5em;
 }
 /*# sourceMappingURL=main.css.map */

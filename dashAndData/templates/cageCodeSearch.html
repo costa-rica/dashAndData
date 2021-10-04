@@ -12,7 +12,7 @@
 
 <!-- Datatable -->
 <script src="../static/js/jquery-3.1.1.slim.min.js"></script>
-<link rel="stylesheet" type="text/css" href="../static/css/jquery.dataTables.min.css">
+<link rel="stylesheet" type="text/css" href="../static/css/jquery.dataTables.min_dashAndData.css">
 <link rel="stylesheet" type="text/css" href="../static/css/responsive.dataTables.min.css">
 <script src="../static/js/moment.min.js"></script>
 <script type="text/javascript" src="../static/js/jquery.dataTables-1.1.20.min.js"></script>
@@ -34,7 +34,7 @@ The data from this site comes from the
 
 </p></div>
 <form action="#" method="POST" enctype="multipart/form-data">
-<div class = "cageBox lightPadding">
+<div class = "cageBox ">
     <!--Enter path to batch file: <input type="file" name="cageBatch"/>
 
     <button type="submit" name="actionUpload" value="upload" style="margin-left: 2%"> Upload</button>
@@ -45,8 +45,6 @@ The data from this site comes from the
 	
 		{% for key, searchCriteria in searchDictClean.items() %}
 		<div class="searchCriteriaRows">
-
-
 
 			<span class="criteriaLabel">{{ searchCriteria }}: </span>
 			<input type="text" name={{ key }} value= {{ searchStringDict[searchCriteria] }}>
@@ -70,15 +68,15 @@ The data from this site comes from the
 	{% endif %}
 
 	<div class="cageButton">
-    <button type="submit" name="searchCage" value="search" class="btn btn-primary"> Search</button>
-    
-	{% if searchStringDict %}
-    <button type="submit" name="searchCage" value="download" class="btn btn-primary"> Download Excel</button>
-	<span class="clearButton">
-	<button type="submit" class="btn btn-secondary" name="clearButton" value="clear">Clear</button>
-	</span>
-	{% endif %}
-	<span class="col-2">      </span>
+		<button type="submit" name="searchCage" value="search" class="btn btn-primary"> Search</button>
+		
+		{% if searchStringDict %}
+		<button type="submit" name="searchCage" value="download" class="btn btn-primary"> Download Excel</button>
+		<span class="clearButton">
+			<button type="submit" class="btn btn-secondary" name="clearButton" value="clear">Clear</button>
+		</span>
+		{% endif %}
+		<span class="col-2">      </span>
 	</div>
 
 </div>
@@ -102,7 +100,9 @@ The data from this site comes from the
  {% endif %}
 </form>
 <!--copied this from security.html to build table, probably needs somehig above in headers-->
-	<div class="mt-4 ">
+<div class="table_background_sub">
+
+	<div class="table_background">
 
 	<table id="proxies" class="display table nowrap responsive text_color" style="width: 100%">
 		<thead>
@@ -124,6 +124,7 @@ The data from this site comes from the
 		</tbody>
 	</table>
 	</div>
+</div>
 </div>
 <script type="text/javascript">
     $('#proxies').DataTable();

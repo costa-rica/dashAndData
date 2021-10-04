@@ -34,3 +34,4 @@ class Config:
     # FILES_DATABASE = os.path.join(os.path.dirname(__file__), 'static/files_database')
     SQLALCHEMY_BINDS ={'dbCage':config.get('SQLALCHEMY_BINDS_DBCAGE'),
         'dbSite' :config.get('SQLALCHEMY_BINDS_DBSITE')}
+    GET_STS_FILES = os.path.join(os.path.dirname(__file__), 'static/getSts')
