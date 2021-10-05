@@ -64,4 +64,4 @@ def cageCodeSearch():
             excelObj=cageExcelObjUtil(filePathAndName,df)
             excelObj.close()
             return send_from_directory(os.path.join(current_app.static_folder, 'cageSearch'),'CAGE_SearchResults.xlsx', as_attachment=True)
-    return render_template('cageCodeSearch.html', siteTitle=siteTitle, searchDictClean=searchDictClean)
+    return render_template('cageCodeSearch.html', siteTitle=siteTitle, searchDictClean=searchDictClean, len=len)

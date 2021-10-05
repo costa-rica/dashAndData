@@ -50,7 +50,7 @@ def getStsUtil(website):
         # print('args:::::',Exception.args)
         # print('with_traceback:::',Exception.with_traceback)
         # z='not a url'
-#added line to test github
+
     return z
 
 
