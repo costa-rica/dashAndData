@@ -9,7 +9,7 @@ elif os.environ.get('USER')=='sanjose':
     with open('/home/sanjose/Documents/environments/config.json') as config_file:
         config = json.load(config_file)
 elif os.environ.get('COMPUTERNAME')=='NICKSURFACEPRO4':
-    with open(r"C:\Users\Costa Rica\OneDrive\Documents\professional\config_files\config_dashAndData.json") as config_file:
+    with open(r"C:\Users\Costa Rica\OneDrive\Documents\professional\config_files\config_dashAndData_surface.json") as config_file:
         config = json.load(config_file)
 else:
     with open('/home/ubuntu/environments/config.json') as config_file:
@@ -35,3 +35,6 @@ class Config:
     SQLALCHEMY_BINDS ={'dbCage':config.get('SQLALCHEMY_BINDS_DBCAGE'),
         'dbSite' :config.get('SQLALCHEMY_BINDS_DBSITE')}
     GET_STS_FILES = os.path.join(os.path.dirname(__file__), 'static/getSts')
+    REGISTRATION_KEY=config.get('REGISTRATION_KEY')
+    BLS_API_URL=config.get('BLS_API_URL')
+    BLS = os.path.join(os.path.dirname(__file__), 'static/utility_bls')

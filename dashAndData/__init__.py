@@ -43,6 +43,7 @@ def create_app(config_class=Config):
     # from dashAndData.errors.handlers import errors
     from dashAndData.datatools.cage_search.routes import datatools_cage
     from dashAndData.datatools.security.routes import datatools_security
+    from dashAndData.datatools.blsSearch.routes import datatools_bls
     
     
     app.register_blueprint(blog)
@@ -51,5 +52,6 @@ def create_app(config_class=Config):
     # app.register_blueprint(errors)
     app.register_blueprint(datatools_cage)
     app.register_blueprint(datatools_security)
+    app.register_blueprint(datatools_bls)
 
     return app

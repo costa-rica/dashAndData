@@ -255,24 +255,6 @@ iframe {
 }
 
 /*Data Tools*/
-section.data_tools_main {
-  /*
-    .logo_div_km{
-        position: absolute;
-        right: 0;
-        background-color: var(--bs-gray-400);
-        margin-right: 30px;
-        padding: .8em .8em .8em .8em;
-        border-radius: 50%;
-    }
-    .logo_div_km >img {width:180px;
-        float: right;
-        margin: 0 0 20px 0;
-    }
-
-*/
-}
-
 section.data_tools_main h1 {
   margin-bottom: 1em;
 }
@@ -494,5 +476,90 @@ line-height:.2em; height: .5em; vertical-align: bottom;}
   padding-bottom: 1em;
   background-color: var(--bs-gray-400);
   border-radius: .5em;
+}
+
+/*BLS Menu*/
+section.datatools_bls h1 {
+  margin-bottom: 1em;
+}
+
+section.datatools_bls .ppi_section {
+  background-color: var(--bs-gray-700);
+  padding: 1em 1em 0 1em;
+  border-radius: .75em;
+}
+
+section.datatools_bls ul {
+  list-style-type: none;
+  padding-left: .1em;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(19rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+}
+
+section.datatools_bls ul a {
+  text-decoration: none;
+}
+
+section.datatools_bls li:nth-child(odd) {
+  background-color: var(--bs-secondary);
+  margin-left: 1em;
+  margin-bottom: 1em;
+  border-radius: .75em;
+  padding: 0 0 .5em .5em;
+}
+
+section.datatools_bls li:nth-child(odd) a:hover {
+  color: var(--bs-dark);
+}
+
+section.datatools_bls li:nth-child(even) {
+  background-color: var(--bs-primary);
+  margin-left: 1em;
+  margin-bottom: 1em;
+  border-radius: .75em;
+  padding: 0 0 .5em .5em;
+}
+
+section.datatools_bls li:hover {
+  background-color: var(--bs-success);
+  color: var(--bs-dark);
+}
+
+section.datatools_bls li:hover a {
+  color: var(--bs-dark);
+}
+
+.metaSection {
+  border-radius: .75em;
+  background-color: #c8c8c8;
+  width: 70%;
+  color: black;
+}
+
+.metaSection ul {
+  list-style-type: none;
+  padding-left: .1em;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(9rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+}
+
+.periodictySection {
+  border-radius: .75em;
+  background-color: #c8c8c8;
+  width: 150px;
+  color: black;
+}
+
+.periodictySection ul {
+  list-style-type: none;
+}
+
+/*priceindices*/
+.buttonCol {
+  text-align: center;
 }
 /*# sourceMappingURL=main.css.map */
