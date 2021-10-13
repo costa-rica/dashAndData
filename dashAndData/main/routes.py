@@ -92,3 +92,10 @@ def about():
 
 
 
+@main.route("/pricing", methods=["GET","POST"])
+def pricing():
+    return render_template('pricing.html')
+
+
+
+

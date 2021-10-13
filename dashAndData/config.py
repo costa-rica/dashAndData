@@ -21,7 +21,7 @@ class Config:
     DEBUG = True
     MAIL_USE_TLS = True
     SECRET_KEY = config.get('SECRET_KEY_DAD')
-    SQLALCHEMY_DATABASE_URI = config.get('SQL_URI_DAD')
+    SQLALCHEMY_DATABASE_URI = config.get('SQLALCHEMY_DATABASE_URI')
     # MAIL_SERVER = config.get('MAIL_SERVER_GOOGLE')
     # MAIL_PORT = config.get('MAIL_SERVER_GOOGLE')
     MAIL_PASSWORD_DAD = config.get('MAIL_PASSWORD_DAD')

@@ -469,8 +469,13 @@ section.datatools_bls {
     margin-left: 3em;
     background-color: var(--bs-gray-800);
     border-radius: .75em;
+    h2 {
+        color: var(--bs-gray-400);
+    }
 }
 
 //.blogHeading1 h2{color: rgb(170, 170, 170);}
 //.blogHeading1 h4{color: rgb(120, 160, 170);}
 .sectionWriting {padding: .5em 4em 1em 3em; /*background-color:rgb(180, 180, 0)*/}
+
+.bold_light{color: var(--bs-gray-200)}

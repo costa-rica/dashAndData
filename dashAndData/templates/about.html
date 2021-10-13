@@ -1,90 +1,93 @@
 {% extends "layout.html" %}
 
-{% block title %} data tools {% endblock %}
+{% block title %}about{% endblock %}
 
 {% block main %}
 <section class="about_main">
     <div class="container">
-		<h1 >About</h1>
+		<h1 >About Dashboards and Databases</h1>
         <br/>
 	<div class="sectionWriting_big">
 
         <div class="blogHeading1" ><h2>Mission</h2></div>
 
         <div class="sectionWriting">
-        Customer driven and tool agnostic approach to building the right application for each project.
+            Create a process that feels as though you have a team with one more analyst that has a programming skill set so we can build the application/tool together.
         </div>
-
-        <div class="blogHeading1" ><h2>What is a dashboard and database application?</h2></div>
-        <div class="sectionWriting">
-            A simple way to think of it is a super organized excel spreadsheet. I’m sure when you start a spreadsheet it’s a clean table with highlighted column headings nicely fitted rows and easy to read text. But the time it get’s passed around your team. There are new rows with text that is not readable, new colors for columns and comments in emails that are critical and make the spreadsheet no longer a standalone document.
-            <br/><br/>
-            A dashboard and database application takes that messy spreadsheet puts everything into a database. Then a user interface is built around the database so that users can view all data items, make changes and add new information. Then view the data again in the application or build reports in excel, text, or some other media.
-            <br/><br/>
-            <br/>
-        </div>
-
-
-        <div class="blogHeading1" ><h2>The Process</h2></div>
-        <div class="sectionWriting">
-            You will most likely have an idea of what they need or perhaps, even a spreadsheet or datafile that already has a start. We’ll discuss the project on a conceptual basis. We’ll start off discussing your pie in the sky dream without regard to any technical obstacles. 
-            <br/><br/>
-            Then we’ll start discussing what is required. What are the necessities. At this point I can tell you if this is something that can be easily done or will require some learning on my part.
-            <br/><br/>
-            Then with that understanding I will build a pilot.
-            <br/><br/>
-            Once the pilot is built and functional, we can start adding bells and whistles to improve the workflow.
-        </div>
-
-
-        <div class="blogHeading1" ><h2>Some work I have already done</h2></div>
-        <div class="sectionWriting">
-            
-                Here are three demo applications:
-                <ul>
-                    <li>
-                        <a href="https://demo.kmdashboard.dashboardsanddatabases.com"> Kinetic Metrics/ NHTSA Dashboard</a>
-                        <ul>
-                            <li>
-                                Builds a database and interface around dataset provided by the National Highway Traffic Safety Administration.
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li>
-                        <a href="https://dev.shiftgarten.com/">Shiftgarten</a>
-                        <ul>
-                            <li>
-                                Builds a database and infterface around restaurant management records. All data is user input. The structure is built around how many restaurants and what type of data the user wants to collect. Data is from restaurant revenue and costs to employee hours and pay.
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="https://what-sticks-health.com/">What Sticks Health</a>
-                        <ul>
-                            <li>
-                                Builds a database and interface around personal devices. The goal of this platform is to allow for users to have centralized data storage from everything from their fitbit steps to their 23andMe gene sequence to recording how many cups of coffee they drink a day. With all the data stored in one place the user will be able to gain perspective on what sorts of things impact their health. Currently the demo shows heart rate readings from Polar device and inputs on coffee intake. This product is still under construction.
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-                The concept is similar. But the look very different in all of the applications. Hopefully, this gives you some intuition for how your project will have similarities but also unique functionality that is important for your work.
-        </div>
-
-
-        <div class="blogHeading1" ><h2>Everything is customizable</h2></div>
-        <div class="sectionWriting">
-            The key here is everything is customizable. I am not constrained to using a single tool. I like to think of myself as tool agnostic. If you can dream I can build it.
-            <br/><br/>
-            The software is a combination of front-end programming languages like HTML, CSS and javascript. The backend is SQL, Python and Flask.  There are more languages, but these are what I’m working with at the moment.
-            <br/><br/>
-            The hardware are computers that run the software and make the application available on the web, your computer or personal device.
-            <br/><br/>
-            Currently, the hardware I am using a combination of Amazon Web Services (AWS) and GoDaddy to host the applications and maintain a website address. I’ve built a server computer so if you are interested I can build your own computer to run the application from your house, office, wherever. When I first started I thought this is a way to have complete autonomy and control. After a while I started to see how using someone else’s computers online like AWS virtual machines or any other company is just as good and has its own set of benefits.
-        </div>
-
+</div>
+<br/><br/>
+<div class="sectionWriting_big">
+    <div class="blogHeading1" ><h2>What is a dashboard and database (DD) application?</h2></div>
+    <div class="sectionWriting">
+        A simple way to think of a DD application is a well-organized excel spreadsheet. When the spreadsheet is first created it’s a clean table with highlighted column headings nicely fitted rows and easy to read text. But as the spreadsheet gets passed around your team columns/rows get added, new highlights are made, text no longer fits in each cell readable and comments in emails included in the circulation email are critical making the spreadsheet no longer a standalone document.
+        <br/><br/>
+        A DD application takes that messy spreadsheet puts everything into a database with a clean display. Then a user interface is built around the database allows users to view data items, make changes and add new information. Then view the data again in the application or build reports in excel, text, or some other media.
+        <br/><br/>
+        All this can be done with authentication and/or different user privileges so its accessible to only those desired and protected from those outside the team.
 
     </div>
+</div>
+<br/><br/>
+
+<div class="sectionWriting_big">
+    <div class="blogHeading1" ><h2>About me</h2></div>
+    <div class="sectionWriting">
+        I am an economist at heart that has developed programmer skills. I love to be in the room discussing the needs for the project. Everything from the broader project goals that sometimes turn philosophical to the minutia surrounding data types, statistics or simply where to look for data. And in the end, I can do the legwork to get final product production ready.
+        <br/><br/>
+        If you are in any of these situations I can help if:
+        <ul>
+            <li>you don't have an IT office</li>
+            <li>IT office telling you they cannot do something</li>
+            <li>have an idea and need someone to build it</li>
+            <li>you want to discuss the feasibility of an idea/project</li>
+        </ul>
+
+        Consider me a vertically integrated data-shop that says, “yes we can!”
+
     </div>
+</div>
+<br/><br/>
+
+
+<div class="sectionWriting_big">
+    <div class="blogHeading1" ><h2>Some of my past work</h2></div>
+    <div class="sectionWriting">
+        
+            Here are three demo applications:
+            <ul>
+                <li>
+                    <a href="https://demo.kmdashboard.dashboardsanddatabases.com"> Kinetic Metrics/ NHTSA Dashboard</a>
+                    <ul>
+                        <li>
+                            Builds a database and interface around dataset provided by the National Highway Traffic Safety Administration.
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="https://dev.shiftgarten.com/">Shiftgarten</a>
+                    <ul>
+                        <li>
+                            Builds a database and infterface around restaurant management records. All data is user input. The structure is built around how many restaurants and what type of data the user wants to collect. Data is from restaurant revenue and costs to employee hours and pay.
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="https://what-sticks-health.com/">What Sticks Health</a>
+                    <ul>
+                        <li>
+                            Builds a database and interface around personal devices. The goal of this platform is to allow for users to have centralized data storage from everything from their fitbit steps to their 23andMe gene sequence to recording how many cups of coffee they drink a day. With all the data stored in one place the user will be able to gain perspective on what sorts of things impact their health. Currently the demo shows heart rate readings from Polar device and inputs on coffee intake. This product is still under construction.
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            The concept is similar. But the look very different in all of the applications. Hopefully, this gives you some intuition for how your project will have similarities but also unique functionality that is important for your work.
+    </div>
+</div>
+
+
+
+
+
 </section>
 {% endblock %}
