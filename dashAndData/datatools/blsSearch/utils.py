@@ -45,6 +45,68 @@ def checkStatusUtility(formDict):
     return (cs0,cs1,cs2,cs3,cs4,cs5,cs6,cs7,cs8,cs9,cs10,cs11,cs12,cs13)
     
 
+def formatSeriesIdListUtil(seriesIdList):
+    seriesIdList=seriesIdList.split(',')
+    seriesIdList2=[]
+    for i in seriesIdList:
+        j=i.replace('\n','')
+        seriesIdList2.append(j)
+    return seriesIdList2
+
+
+def priceIndicesToDf(seriesIdList,dfType):
+    listDict={}
+    
+    for i in seriesIdList:
+        if dfType=='Industry':
+            series = Industrynames.query.filter_by(series_id=i).first()
+        else:
+            series = Commoditynames.query.filter_by(series_id=i).first()
+        
+        yearsList = [j.year for j in series.values]
+        periodsList = [j.period for j in series.values]
+        valuesList = [j.value for j in series.values]
+        listDict[i] = [yearsList,periodsList, valuesList]
+    dfDict={}
+    for i in listDict:
+        df=pd.DataFrame(list(zip(listDict[i][0],listDict[i][1],listDict[i][2])), columns=['years','periods','values'])
+        df.replace({'periods':periodsDict}, inplace=True)
+        df=df[df.periods!=13]
+        df['date']=pd.to_datetime(dict(year=df.years,month=df.periods,day=1))
+        
+        df.drop(columns=['years','periods'], inplace=True)
+        df.set_index(['date'], inplace=True)
+        df.rename(columns={'values':i}, inplace=True)
+        dfDict[i]=df
+    
+    dfExcel=list(dfDict.values())[0]
+    if len(seriesIdList)>1:
+        for i in dfDict:
+            if i!=list(dfDict.keys())[0]:
+                dfExcel=pd.merge(dfExcel,dfDict[i], how='outer',left_index=True, right_index=True)
+    
+    dfExcel.reset_index(inplace=True)
+    dfExcel.sort_values(by=['date'],ascending = False, inplace = True)
+    return dfExcel
+
+
+
+def updateDbWithApi(seriesIdListClean, table_name):
+    
+    db_date_is_good_until, api_search_list = checkDbForExistingData(seriesIdListClean, table_name)
+    print('successfully checked Db for Existing Data. The follwing indicies need updating: ',api_search_list)
+    if len(api_search_list)>0:
+        json_data = blsApiCall(db_date_is_good_until, api_search_list)
+        df_dict = makeDfDictionary(api_search_list, json_data)
+        print('succesfully created df_dict')
+        deleteOldRows(table_name, df_dict)
+        print('Succesfully update! Appeneded ', table_name,' for :',api_search_list)
+    else:
+        print('All requested series_ids already up to date. No BLS API call necessary.')
+    
+
+
+
 def annualizeDf(df):
     df['year']=pd.DatetimeIndex(df['date']).year
     df=df.groupby(['year']).mean()
@@ -78,6 +140,8 @@ def checkDbForExistingData(seriesIdListClean, table_name):
     for table in db.Model.__subclasses__():
         if table.__tablename__ == table_name:
             database_to_search = table
+            print('database_to_search:::',type(database_to_search))
+            print('table:::',type(table))
 
     api_search_list =[]
     for series in seriesIdListClean:
@@ -85,6 +149,9 @@ def checkDbForExistingData(seriesIdListClean, table_name):
             database_to_search.series_id == seriesIdListClean[0]).first()[0]
         id_list = db.session.query(database_to_search.id, database_to_search.period).filter(
             database_to_search.series_id == seriesIdListClean[0],database_to_search.year == max_year).all()
+
+        print('id_list::::', id_list)
+        print('max_year::::', max_year)
 
         x=0
         for i in id_list:
@@ -178,30 +245,6 @@ def deleteOldRows(table_name, df_dict):
         df.to_sql(table_name, db.engine, if_exists='append', index=False)
 
 
-def updateDbWithApi(seriesIdListClean, table_name):
-    
-    db_date_is_good_until, api_search_list = checkDbForExistingData(seriesIdListClean, table_name)
-    print('successfully checked Db for Existing Data. The follwing indicies need updating: ',api_search_list)
-    if len(api_search_list)>0:
-        json_data = blsApiCall(db_date_is_good_until, api_search_list)
-        df_dict = makeDfDictionary(api_search_list, json_data)
-        print('succesfully created df_dict')
-        deleteOldRows(table_name, df_dict)
-        print('Succesfully update! Appeneded ', table_name,' for :',api_search_list)
-    else:
-        print('All requested series_ids already up to date. No BLS API call necessary.')
-    
-
-
-def formatSeriesIdListUtil(seriesIdList):
-    seriesIdList=seriesIdList.split(',')
-    seriesIdList2=[]
-    for i in seriesIdList:
-        j=i.replace('\n','')
-        seriesIdList2.append(j)
-    return seriesIdList2
-
-
 def seriesIdTitleListIndustry():
     listOfSeriesIds=db.session.query(Industryvalues.series_id).distinct().all()
     listOfSeriesIds=[i[0] for i in list(listOfSeriesIds)]
@@ -225,41 +268,6 @@ def seriesIdTitleListCommodity():
         indexSeriesIdTitleList.append(indexIdTitleList)
     return indexSeriesIdTitleList
 
-
-def priceIndicesToDf(seriesIdList,dfType):
-    listDict={}
-    
-    for i in seriesIdList:
-        if dfType=='Industry':
-            series = Industrynames.query.filter_by(series_id=i).first()
-        else:
-            series = Commoditynames.query.filter_by(series_id=i).first()
-        
-        yearsList = [j.year for j in series.values]
-        periodsList = [j.period for j in series.values]
-        valuesList = [j.value for j in series.values]
-        listDict[i] = [yearsList,periodsList, valuesList]
-    dfDict={}
-    for i in listDict:
-        df=pd.DataFrame(list(zip(listDict[i][0],listDict[i][1],listDict[i][2])), columns=['years','periods','values'])
-        df.replace({'periods':periodsDict}, inplace=True)
-        df=df[df.periods!=13]
-        df['date']=pd.to_datetime(dict(year=df.years,month=df.periods,day=1))
-        
-        df.drop(columns=['years','periods'], inplace=True)
-        df.set_index(['date'], inplace=True)
-        df.rename(columns={'values':i}, inplace=True)
-        dfDict[i]=df
-    
-    dfExcel=list(dfDict.values())[0]
-    if len(seriesIdList)>1:
-        for i in dfDict:
-            if i!=list(dfDict.keys())[0]:
-                dfExcel=pd.merge(dfExcel,dfDict[i], how='outer',left_index=True, right_index=True)
-    
-    dfExcel.reset_index(inplace=True)
-    dfExcel.sort_values(by=['date'],ascending = False, inplace = True)
-    return dfExcel
 
 
 

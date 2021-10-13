@@ -152,10 +152,19 @@ def blsCommodity():
                 cs8=csUtil[8],cs9=csUtil[9],cs10=csUtil[10], cs11=csUtil[11],cs12=csUtil[12],cs13=csUtil[13]))
 
         elif formDict.get('downloadButton') and textareaEntry_new != '':
+            
+            #check text file with last update
+            #if update is less than 30 days ago no updatre
+            #else request new data from bls
+            #then make df
+            #then make excel
+            
+            
             seriesIdList=session['textareaEntry'].replace('\r\n','')
+            
             #make seriesId for indexValuesDf
             seriesIdListClean=formatSeriesIdListUtil(seriesIdList)
-            print(seriesIdListClean)
+            print('seriesIdListClean::::',seriesIdListClean)
             indexValuesDf=priceIndicesToDf(seriesIdListClean,'Commodity')
 
             updateDbWithApi(seriesIdListClean, 'commodityvalues')#<---checks db for requested data not current

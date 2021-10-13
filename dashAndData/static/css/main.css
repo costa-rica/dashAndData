@@ -352,6 +352,11 @@ section.data_tools_main #logo_div_wsh img {
   width: 130px;
 }
 
+section.data_tools_main #logo_div_bls img {
+  border-radius: .75em;
+  width: 300px;
+}
+
 @media only screen and (max-width: 1010px) {
   #logo_div_km {
     display: none;
@@ -561,5 +566,17 @@ section.datatools_bls li:hover a {
 /*priceindices*/
 .buttonCol {
   text-align: center;
+}
+
+.sectionWriting_big {
+  padding: 1em;
+  margin-left: 3em;
+  background-color: var(--bs-gray-800);
+  border-radius: .75em;
+}
+
+.sectionWriting {
+  padding: .5em 4em 1em 3em;
+  /*background-color:rgb(180, 180, 0)*/
 }
 /*# sourceMappingURL=main.css.map */

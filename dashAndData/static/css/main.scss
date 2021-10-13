@@ -290,7 +290,6 @@ section.data_tools_main {
     }
     #logo_div_km{
         background-color: var(--bs-gray-400);
-        
         border-radius: 50%;
         img {width:120px;margin: 0 0 20px 0;}
         
@@ -308,6 +307,12 @@ section.data_tools_main {
         img {
             border-radius: 50%;
             width: 130px;
+        }
+    }
+    #logo_div_bls{
+        img {
+            border-radius: .75em;
+            width:300px;
         }
     }
 }
@@ -457,3 +462,15 @@ section.datatools_bls {
 
 .buttonCol{ //width:10%;
     text-align: center;}
+
+//Blog About Pages
+.sectionWriting_big{
+    padding: 1em;
+    margin-left: 3em;
+    background-color: var(--bs-gray-800);
+    border-radius: .75em;
+}
+
+//.blogHeading1 h2{color: rgb(170, 170, 170);}
+//.blogHeading1 h4{color: rgb(120, 160, 170);}
+.sectionWriting {padding: .5em 4em 1em 3em; /*background-color:rgb(180, 180, 0)*/}

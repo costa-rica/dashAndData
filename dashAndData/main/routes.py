@@ -33,7 +33,7 @@ def home():
 #confirmation email
         msg_conf = EmailMessage()
         msg_conf['Subject'] = 'Message Sent to Dashboards and Databases'
-        msg_conf['From'] = current_app.config['MAIL_USERNAME_TGE']
+        msg_conf['From'] = current_app.config['MAIL_USERNAME_DAD']
         msg_conf['To'] = email_submit
         msg_conf.add_alternative(f"""\
 <!DOCTYPE html>
@@ -50,14 +50,14 @@ def home():
             smtp.ehlo()
             smtp.starttls()
             smtp.ehlo()
-            smtp.login(current_app.config['MAIL_USERNAME_TGE'],current_app.config['MAIL_PASSWORD_TGE'])
+            smtp.login(current_app.config['MAIL_USERNAME_DAD'],current_app.config['MAIL_PASSWORD_DAD'])
             smtp.send_message(msg_conf)
 
 #notification email
         msg_from_DandD = EmailMessage()
         msg_from_DandD['Subject'] = 'Message from Dashboards and Databases'
-        msg_from_DandD['From'] = current_app.config['MAIL_USERNAME_TGE']
-        msg_from_DandD['To'] = current_app.config['MAIL_USERNAME_TGE']
+        msg_from_DandD['From'] = current_app.config['MAIL_USERNAME_DAD']
+        msg_from_DandD['To'] = current_app.config['MAIL_USERNAME_DAD']
         msg_from_DandD.add_alternative(f"""\
 <!DOCTYPE html>
 <html>
@@ -73,7 +73,7 @@ def home():
             smtp.ehlo()
             smtp.starttls()
             smtp.ehlo()
-            smtp.login(current_app.config['MAIL_USERNAME_TGE'],current_app.config['MAIL_PASSWORD_TGE'])
+            smtp.login(current_app.config['MAIL_USERNAME_DAD'],current_app.config['MAIL_PASSWORD_DAD'])
             smtp.send_message(msg_from_DandD)
 
         
@@ -86,8 +86,9 @@ def home():
     return render_template('index.html')
 
 
-
-
+@main.route("/about", methods=["GET","POST"])
+def about():
+    return render_template('about.html')
 
 
 
